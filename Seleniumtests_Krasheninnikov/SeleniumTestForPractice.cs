@@ -9,7 +9,7 @@ public class SeleniumTestForPractice
     [Test]
     public void Authorization()
     {
-        //изменение через консоль
+        //изменение через консоль еще изменение для gitextensions
         var options = new ChromeOptions();// опции хрома новый метод типо
         options.AddArguments("--no-sandbox","--start-maximized", "--disable-extensions");//Здесь передаем аргументынастройк
         
