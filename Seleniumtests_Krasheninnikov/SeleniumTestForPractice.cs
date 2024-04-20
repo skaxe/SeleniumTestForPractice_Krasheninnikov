@@ -88,22 +88,6 @@ public class SeleniumTestForPractice
         var currentURL = driver.Url;
         currentURL.Should().Be("https://staff-testing.testkontur.ru/profile/settings/edit", "Current url = " + currentURL);
     }
-
-    //[Test]
-    // public void Search()//ПОКА НЕ РАБОТАЕТ КАК ЗАЛЕЗТЬ В ПОИСК ЧЕРЕЗ ЖАВА СКРИПТ
-    // {
-    //     Authorization_method("--start-maximized");
-    //     //var searchBar = driver.FindElement(By.CssSelector("[data-tid='InputLikeText__input']"));
-    //     //Thread.Sleep(500);
-    //     var fullname = "Поиск сотрудника, подразделения, сообщества, мероприятия";
-    //     var searchBar = driver.FindElement(By.CssSelector("div[data-tid='InputLikeText__input']"))
-    //         .FindElement(By.XPath("//*[contains(text(),'Поиск сотрудника, подразделения, сообщества, мероприятия')]"));
-    //         //var searchBar = driver.FindElement(By.XPath("//input[contains(text(), 'Поиск сотрудника, подразделения, сообщества, мероприятия']"));
-    //     //Thread.Sleep(500);
-    //     //searchBar.Click();
-    //     //searchBar.SendKeys("Крашенинников");
-    //     Thread.Sleep(500);
-    // }
     
     [Test]
     public void CreateCommunity()
