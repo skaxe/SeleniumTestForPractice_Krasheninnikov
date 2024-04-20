@@ -1,0 +1,6 @@
+C:\Users\golds\RiderProjects\Seleniumtests_Krasheninnikov\Seleniumtests_Krasheninnikov\obj\Debug\net6.0\Seleniumtests_Krasheninnikov.csproj.AssemblyReference.cache
+C:\Users\golds\RiderProjects\Seleniumtests_Krasheninnikov\Seleniumtests_Krasheninnikov\obj\Debug\net6.0\Seleniumtests_Krasheninnikov.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\golds\RiderProjects\Seleniumtests_Krasheninnikov\Seleniumtests_Krasheninnikov\obj\Debug\net6.0\Seleniumtests_Krasheninnikov.AssemblyInfoInputs.cache
+C:\Users\golds\RiderProjects\Seleniumtests_Krasheninnikov\Seleniumtests_Krasheninnikov\obj\Debug\net6.0\Seleniumtests_Krasheninnikov.AssemblyInfo.cs
+C:\Users\golds\RiderProjects\Seleniumtests_Krasheninnikov\Seleniumtests_Krasheninnikov\obj\Debug\net6.0\Seleniumtests_Krasheninnikov.csproj.CoreCompileInputs.cache
+C:\Users\golds\RiderProjects\Seleniumtests_Krasheninnikov\Seleniumtests_Krasheninnikov\obj\Debug\net6.0\Seleniumtests_Krasheninnikov.sourcelink.json
