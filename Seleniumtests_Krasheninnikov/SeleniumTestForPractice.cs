@@ -13,6 +13,7 @@ namespace Seleniumtests_Krasheninnikov;
 public class SeleniumTestForPractice
 {
     public ChromeDriver driver;
+    
     [SetUp]
     public void SetUP()
     {
@@ -21,11 +22,13 @@ public class SeleniumTestForPractice
         driver = new ChromeDriver(options);
         driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(3);
     }
+    
     public void ExplicitExpectationByDatatid(string datatid)
     {
         IWait<IWebDriver> wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
         wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("[data-tid='"+datatid+"']")));
     }
+    
     [Test]
     public void Authorization()
     {
