@@ -15,12 +15,26 @@ public class SeleniumTestForPractice
     public ChromeDriver driver;
     
     [SetUp]
-    public void SetUP()
+    public void SetUp()
     {
         var options = new ChromeOptions();
         options.AddArguments("--no-sandbox", "--disable-extensions");
         driver = new ChromeDriver(options);
         driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(3);
+        driver.Manage().Window.Maximize();
+        Authorization();
+    }
+
+    public void Authorization()
+    {
+        driver.Navigate().GoToUrl("https://staff-testing.testkontur.ru");
+        var login = driver.FindElement(By.Id("Username"));
+        login.SendKeys("sa.krasheninnikov@yandex.ru");
+        var password = driver.FindElement(By.Id("Password"));
+        password.SendKeys("q1W2e!Semen");
+        var submit = driver.FindElement(By.Name("button"));
+        submit.Click();
+        ExplicitExpectationByDatatid("News");
     }
     
     public void ExplicitExpectationByDatatid(string datatid)
@@ -30,24 +44,15 @@ public class SeleniumTestForPractice
     }
     
     [Test]
-    public void Authorization()
-    {
-        driver.Manage().Window.Maximize();
-        driver.Navigate().GoToUrl("https://staff-testing.testkontur.ru");
-        var login = driver.FindElement(By.Id("Username"));
-        login.SendKeys("sa.krasheninnikov@yandex.ru");
-        var password = driver.FindElement(By.Id("Password"));
-        password.SendKeys("q1W2e!Semen");
-        var submit = driver.FindElement(By.Name("button"));
-        submit.Click();
+     public void Authorization_Test()
+     {
         var currentLocation = driver.FindElement(By.CssSelector("[data-tid='DateNews']"));
         currentLocation.Should().NotBeNull();
-    }
+     }
     
     [Test]
     public void SearchBar()
-    {   
-        Authorization();
+    {
         //ищу профиль в поисковике
         var search = driver.FindElement(By.CssSelector("[data-tid='SearchBar']"));
         search.Click();
@@ -64,7 +69,6 @@ public class SeleniumTestForPractice
     [Test]
     public void GoToCommunity()
     {
-        Authorization();
         driver.Manage().Window.Size = new Size(1000, 1000);
         //открываю сообщества кнопкой бокового меню
         var menu = driver.FindElement(By.CssSelector("[data-tid='SidebarMenuButton']"));
@@ -79,8 +83,6 @@ public class SeleniumTestForPractice
     [Test]
     public void EditProfile()
     {
-        driver.Manage().Window.Maximize();
-        Authorization();
         //Иду в выпадающее меню
         var drop_menu = driver.FindElement(By.CssSelector("[data-tid='PopupMenu__caption']")); 
         drop_menu.Click();
@@ -94,9 +96,6 @@ public class SeleniumTestForPractice
     [Test]
     public void CreateCommunity()
     {
-        driver.Manage().Window.Maximize();
-        Authorization();
-        //пошел в сообщества
         var communities = driver.FindElement(By.CssSelector("[data-tid='Community']"));
         communities.Click();
         //создаю сообщество
@@ -126,7 +125,6 @@ public class SeleniumTestForPractice
     [Test]
     public void AdditionalMail()
     {
-        Authorization();
         driver.Navigate().GoToUrl("https://staff-testing.testkontur.ru/profile/settings/edit");
         ExplicitExpectationByDatatid("FIO");
         //Заполняю Дополнительный email
