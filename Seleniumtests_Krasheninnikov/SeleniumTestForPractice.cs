@@ -34,7 +34,6 @@ public class SeleniumTestForPractice
         password.SendKeys("q1W2e!Semen");
         var submit = driver.FindElement(By.Name("button"));
         submit.Click();
-        ExplicitExpectationByDatatid("News");
     }
     
     public void ExplicitExpectationByDatatid(string datatid)
@@ -125,8 +124,8 @@ public class SeleniumTestForPractice
     [Test]
     public void AdditionalMail()
     {
+        ExplicitExpectationByDatatid("News");
         driver.Navigate().GoToUrl("https://staff-testing.testkontur.ru/profile/settings/edit");
-        ExplicitExpectationByDatatid("FIO");
         //Заполняю Дополнительный email
         var additionalmail = driver.FindElement(By.CssSelector("[data-tid='AdditionalEmail']")).FindElement(By.CssSelector("[data-tid='Input']"));
         additionalmail.SendKeys("\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b");
